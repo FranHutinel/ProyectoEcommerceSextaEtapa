@@ -1,5 +1,5 @@
 {
-  "name": "portafolio-modulo-6",
+  "name": "ProyectoEcommerceSextaEtapa",
   "version": "1.0.0",
   "description": "portafolio modulo 6 desarrollador full stack en javascript",
   "main": "index.js",
@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon src/index.js"
   },
-  "author": "nicolas escobar villegas",
+  "author": "Mariela Ochoa Hutinel",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
