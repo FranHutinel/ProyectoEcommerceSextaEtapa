@@ -126,8 +126,7 @@ export const addProduct = async (req, res) => {
 }
 
 export const getVentas = async (req,res) =>{
-  let ordenes = await Orden.findAll({raw :false , 
-                                    include :[{model : Detalle_orden }] });
+  let ordenes = await Orden.findAll({raw :false ,include :Detalle_orden});
   console.log(ordenes[0].dataValues)
   let productosFormatiados = ordenes.map(producto => {
     let objectProducto = {
