@@ -21,6 +21,7 @@ import apiVentas from './routes/ventas.routes.js'
 import err404 from './routes/404.routes.js'
 
 //en caso de utilizar envio entre servidores
+app.use(express.json());
 app.use(json());
 app.use(urlencoded({ extended: false }));
 app.use(cors())

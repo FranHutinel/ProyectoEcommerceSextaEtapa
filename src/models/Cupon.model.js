@@ -34,3 +34,5 @@ export const Cupon  = sequelize.define('Cupon',{
   })
 
 
+
+

@@ -63,5 +63,3 @@ export const Orden  = sequelize.define('Orden',{
 
 
   })
-
-

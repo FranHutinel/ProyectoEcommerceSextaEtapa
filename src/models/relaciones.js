@@ -59,6 +59,6 @@ Carrito.belongsTo(Cliente , {foreignKey : "id_cliente"})
 Carrito.hasMany(Detalle_carrito, {foreignKey : "id_carrito", as : 'Detalle' });
 Detalle_carrito.belongsTo(Carrito , {foreignKey : "id_carrito" })
 
-//realacion uno a muchos producto y detalle carrito
+//relacion uno a muchos producto y detalle carrito
 Producto.hasMany(Detalle_carrito, {foreignKey : "id_producto", as : 'Producto'});
 Detalle_carrito.belongsTo(Producto , {foreignKey : "id_producto"})

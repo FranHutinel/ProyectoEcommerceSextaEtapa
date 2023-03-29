@@ -58,3 +58,4 @@ export const Cliente  = sequelize.define('Cliente',{
   })
 
 
+

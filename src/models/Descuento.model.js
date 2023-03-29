@@ -35,3 +35,4 @@ export const Descuento  = sequelize.define('Descuento',{
   })
 
 
+

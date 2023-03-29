@@ -43,3 +43,4 @@ export const Comentario  = sequelize.define('Comentario',{
   })
 
 
+

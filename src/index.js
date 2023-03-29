@@ -19,14 +19,14 @@ import './models/relaciones.js'
 const main = async () =>{
     try {
         await sequelize.authenticate();
-        console.log('contectado con exito')
-        await sequelize.sync({force:false , alter:false ,create:false});
+        console.log('Conectado con éxito')
+        await sequelize.sync({force:false ,alter:false, create:false});
         //rescatamos el valor del puerto y en caso de error dejamos por defecto el puerto 3000
-        let PORT =process.env.PORT || 3000;
-        app.listen(PORT , ()=>console.log('servidor en el puerto' + PORT))
+        let PORT = process.env.PORT || 3000;
+        app.listen(PORT , ()=>console.log("Servidor escuchando en http://localhost:" + PORT))
     } catch (error) {
         console.log(error)
-        console.log('a ocurrido un error')
+        console.log('Ha ocurrido un error')
     }
 }
 

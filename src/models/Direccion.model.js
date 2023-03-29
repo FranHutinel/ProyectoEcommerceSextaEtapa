@@ -42,3 +42,4 @@ export const Direccion  = sequelize.define('Direccion',{
   })
 
 
+

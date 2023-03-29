@@ -14,7 +14,7 @@ formulario.addEventListener('submit',(e)=>{
         precio:precio.value,
         stock:stock.value,
         imagen : imagen.value,
-        categoria:categoria.value,
+        categoria: categoria.value,
         descripcion : descripcion.value
     }
     const myHeaders = new Headers();

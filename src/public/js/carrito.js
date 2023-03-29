@@ -12,7 +12,7 @@ const getProducts = () => {
                 cargarPrecio(data.data)
 
             } else {
-                alert('ha ocurrido un error al cargar los productos' + code.message)
+                alert('Ha ocurrido un error al cargar los productos' + code.message)
             }
         })
 }
@@ -92,7 +92,7 @@ const cargarPrecio = (productos) => {
             </div>
     
             <div class="grid grid-cols-1 p-5">
-                <button onclick="comprar()" class="w-full py-3 bg-green-400 hover:bg-green-500 rounded text-white text-center text-xl">Comprar</button>
+                <a href="" onclick="comprar()" class="w-full py-3 bg-green-400 hover:bg-green-500 rounded text-white text-center text-xl">Comprar</a>
             </div>
          `
 
@@ -109,14 +109,13 @@ const cargarPrecio = (productos) => {
 const restar = (id) => {
 
     fetch("/api/carrito/" + id, {
-        method: "DELETE",
-        redirect : 'manual'
-
+        method: "DELETE"
     })
         .then(response => response.json())
         .then(result => {
+            alert(result.message);
             getProducts()
-            // location.reload();
+            location.reload();
         })
         .catch(error => {
             alert(error)
@@ -126,15 +125,13 @@ const restar = (id) => {
 
 const eliminarCarrito = (id) => {
     fetch("/api/v1/carrito/" + id, {
-        method: "DELETE",
-        redirect : 'manual'
-
+        method: "DELETE"
     })
         .then(response => response.json())
         .then(result => {
             alert(result.message);
             getProducts()
-            // location.reload();
+            location.reload();
         })
         .catch(error => {
             alert(error)
@@ -146,7 +143,6 @@ const sumar = (id) => {
     fetch(url, {
         method: "GET",
         redirect : 'manual'
-
     })
         .then(response => response.json())
         .then(data => {
@@ -175,16 +171,16 @@ const comprar = () => {
         body: JSON.stringify(client),
         redirect : 'manual'
     })
-        .then(response => response.json())
+        .then(response =>
+         console.log(response))
+            return response.json
         .then(data => {
             if (data.code == 500) {
-            alert('todo mal ')
-                errorCompra()
-                main()
+                // errorCompra()
+                // main()
             } else {
-                alert('todo salio bn')
-                mensaje();
-                main();
+                // mensaje();
+                // main();
             }
         })
         .catch(error => {
@@ -201,16 +197,17 @@ const mensaje = () => {
                         <p class="text-center text-2xl text-white font-bold">Compra realizada con exito</p>
                     </div>`
         mensaje.innerHTML = template;
-    }, 1000);
+    }, 4000);
 }
 const errorCompra = () => {
     let mensaje = document.querySelector('.mensaje')
     let template = ''
+
     setTimeout(() => {
         template = `<div class="container mx-auto bg-red-600 p-4">
                             <p class="text-center text-2xl text-white font-bold">ha ocurrido un error</p>
                     </div>`
         mensaje.innerHTML = template;
-    }, 1000);
+    }, 4000);
 }
 main()

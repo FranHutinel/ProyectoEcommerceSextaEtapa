@@ -59,5 +59,3 @@ export const Producto  = sequelize.define('Producto',{
     tableName : 'Producto',
     alias : 'Producto'
   })
-
-
